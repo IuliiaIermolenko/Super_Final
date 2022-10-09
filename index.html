@@ -1,12 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+ 
+ <link rel="stylesheet" href="style.css"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <style>
+    body {
+ 
+  background: linear-gradient(to right top, #0087fe, #1b81fa, #297bf5, #3475f1, #3d6fec);
+  padding: 30px;
+}
+
+.date {
+     text-align: center;
+       
+}
+
+.mainWeather {
+    text-align: left;
+}
+
+
+.mainTemp {
+    text-align: center;
+}
+
+
+
+
+
+.celsius-link {
+    color: #ffffff;
+}
+
+.weather-app {
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.emoji {
+  text-align: center;
+}
+form {
+  text-align: left;
+  padding: 3px 2px;
+  margin: 0 auto;
+}
+
+.container {
+    font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background: linear-gradient(to bottom, #00ccff 0%, #3399ff 100%);;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 60px;
+  border-radius: 10px;
+}
+
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: linear-gradient(to right top, #0087fe, #1b81fa, #297bf5, #3475f1, #3d6fec);
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: linear-gradient(to right top, #0087fe, #1b81fa, #297bf5, #3475f1, #3d6fec);
+}
+h5 {
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  padding: 0 auto;
+  text-align: center;
+}
+
+h4 {
+  font-weight: 300;
+  padding: 0 auto;
+  text-align: center;
+}
+
+.weather-temperature {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  padding: 0 auto;
+  text-align: center;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
+
+.city {
+  color: aqua;
+  font-weight: 700;
+}
+
+.row {
+  font-weight: bold;
+}
+.card {
+  padding: 0 auto;
+  background-color: #3c3ccd;
+}
+
+.card-title {
+  font-family: "Roboto", sans-serif;
+}
+
+.card-body {
+  text-align: center;
+  padding: -5px;
+font-weight: 300;
+
+  background-color: linear-gradient(to right top, #0087fe, #1b81fa, #297bf5, #3475f1, #3d6fec);
+}
+
+.btn btn-light {
+  text-align: right;
+}
+
+.element {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+.elements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+  </style>
+
+
+
+   </head>
+  
+  <body>
+
+
+<h1>
+    <a href="https://github.com/IuliiaIermolenko/Iulia_weather_challenge" class="btn btn-primary" class="contact-btn">Open-source code</a>
+</h1>
+
+ <div class="container">
+      <div class="top" id="inputSpace">
+        <label for="cityInput" id="city-name">
+          Enter your city
+        </label>
+        <br />
+        <form id="enter-city">
+          <input type="text" name="city" id="city-input" />
+          <input type="submit" value="Search" id="searchButton" />
+        </form>
+        <div class="LocationFinder" id="curr-location">
+          <a href="#">Current location</a>
+        </div>
+      </div>
+
+
+ <div id="days">
+        <div class="fiveDays">
+          <div class="date"></div>
+           <div class="mainWeather">
+            The Day
+            <div class="mainTemp">
+              20°C 🌤️
+            </div>
+          </div>
+
+
     
-</body>
+        </br>
+
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Night</h5>
+      <p class="card-text">
+      </p>
+      <p class="card-text">
+        <small class="text-muted">20 °C</small>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Morning</h5>
+      <p class="card-text"> &#127784;
+        
+      </p>
+      <p class="card-text">
+        <small class="text-muted">22 °C</small>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Afternoon</h5>
+      <p class="card-text">  	
+&#127780
+      </p>
+      <p class="card-text">
+        <small class="text-muted">25 °C</small>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Evening</h5>
+        <p class="card-text">
+          🌤
+        </p>
+        <p class="card-text">
+          <h4 class="text-muted">23 °C</h4>
+        </p>
+      </div>
+</div>
+</div>
+
+</br>
+</br>
+
+<div class="days">  
+<div class="container">
+      <div class="row">
+       <div class="col">
+<div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> ⛈ Sunday</h5>
+        <p class="card-text"> 15/23°C</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+<div class="card">
+     <div class="card-body">
+       <h5 class="card-title">☁️Monday</h5>
+       <p class="card-text"> 20/28°C </p>
+     </div>
+   </div>
+   <div class="row">
+    <div class="col">
+<div class="card">
+   <div class="card-body">
+     <h5 class="card-title"> 🌧️Tuesday</h5>
+     <p class="card-text"> 15/23°C </p>
+   </div>
+ </div>
+ <div class="row">
+  <div class="col">
+<div class="card">
+ <div class="card-body">
+   <h5 class="card-title"> ⛅Wednesday </h5>
+   <p class="card-text"> 18/28°C </p>
+ </div>
+</div>
+<div class="row">
+  <div class="col">
+<div class="card">
+ <div class="card-body">
+   <h5 class="card-title">⛅Thursday</h5>
+   <p class="card-text"> 17/23°C</p>
+ </div>
+</div>
+</div>
+</br>
+
+<h5>
+    <a href="https://github.com/IuliiaIermolenko/Iulia_weather_challenge">Open-source code</a>
+    by Iuliia Iermolenko
+</h5>
+
+
+<script src="script.js"></script>
+
+ </body>
 </html>
+
